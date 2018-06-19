@@ -1,0 +1,155 @@
+cmake_minimum_required(VERSION 3.10)
+project(utaustinvilla3d_master)
+
+set(CMAKE_CXX_STANDARD 11)
+
+include_directories(audio)
+include_directories(behaviors)
+include_directories(bodymodel)
+include_directories(headers)
+include_directories(ikfast)
+include_directories(kalman)
+include_directories(math)
+include_directories(optimization)
+include_directories(parser)
+include_directories(particlefilter)
+include_directories(rvdraw)
+include_directories(skills)
+include_directories(stats)
+include_directories(utwalk)
+include_directories(utwalk/common)
+include_directories(utwalk/kinematics)
+include_directories(utwalk/math)
+include_directories(utwalk/memory)
+include_directories(utwalk/motion)
+include_directories(utwalk/sensor)
+include_directories(worldmodel)
+
+add_executable(utaustinvilla3d_master
+        audio/audio.cc
+        audio/audio.h
+        behaviors/behavior.cc
+        behaviors/behavior.h
+        behaviors/checkfall.cc
+        behaviors/gazebobehavior.cc
+        behaviors/gazebobehavior.h
+        behaviors/kicking.cc
+        behaviors/naobehavior.cc
+        behaviors/naobehavior.h
+        behaviors/pkbehaviors.cc
+        behaviors/pkbehaviors.h
+        behaviors/strategy.cc
+        bodymodel/bodymodel.cc
+        bodymodel/bodymodel.h
+        headers/Field.h
+        headers/headers.cc
+        headers/headers.h
+        ikfast/ikfast.cpp
+        ikfast/ikfast.h
+        ikfast/ikfast_left_foot.cpp
+        ikfast/ikfast_right_foot.cpp
+        kalman/BallKF.cpp
+        kalman/BallKF.h
+        kalman/OrigKalmanFilter.cpp
+        kalman/OrigKalmanFilter.h
+        kalman/PlayerKF.cpp
+        kalman/PlayerKF.h
+        math/Geometry.cc
+        math/Geometry.h
+        math/hctmatrix.cc
+        math/hctmatrix.h
+        math/vecposition.cc
+        math/vecposition.h
+        optimization/optimizationbehaviors.cc
+        optimization/optimizationbehaviors.h
+        parser/parser.cc
+        parser/parser.h
+        parser/VisionObject.h
+        particlefilter/MyRandom.h
+        particlefilter/Particle.cc
+        particlefilter/Particle.h
+        particlefilter/PFLocalization.cc
+        particlefilter/PFLocalization.h
+        rvdraw/rvdraw.cc
+        rvdraw/rvdraw.h
+        servercomm/primitives.cc
+        skills/curve3d.cc
+        skills/curve3d.h
+        skills/skill.cc
+        skills/skill.h
+        skills/skillparser.h
+        stats/recordstatsbehavior.cc
+        stats/recordstatsbehavior.h
+        utwalk/common/InterfaceInfo.h
+        utwalk/common/MassCalibration.h
+        utwalk/common/NMatrix.cpp
+        utwalk/common/NMatrix.h
+        utwalk/common/PIDController.cpp
+        utwalk/common/PIDController.h
+        utwalk/common/RingBuffer.h
+        utwalk/common/RingBufferWithSum.h
+        utwalk/common/RobotDimensions.h
+        utwalk/common/RobotInfo.h
+        utwalk/kinematics/ForwardKinematics.cpp
+        utwalk/kinematics/ForwardKinematics.h
+        utwalk/kinematics/InverseKinematics.cpp
+        utwalk/kinematics/InverseKinematics.h
+        utwalk/kinematics/KinematicsModule.cpp
+        utwalk/kinematics/KinematicsModule.h
+        utwalk/math/Common.h
+        utwalk/math/Geometry.cpp
+        utwalk/math/Geometry.h
+        utwalk/math/Matrix.h
+        utwalk/math/Matrix2x2.h
+        utwalk/math/Matrix3x3.h
+        utwalk/math/MVTools.cpp
+        utwalk/math/MVTools.h
+        utwalk/math/Pose2D.h
+        utwalk/math/Pose3D.h
+        utwalk/math/Range.h
+        utwalk/math/RotationMatrix.cpp
+        utwalk/math/RotationMatrix.h
+        utwalk/math/Vector.h
+        utwalk/math/Vector2.h
+        utwalk/math/Vector3.h
+        utwalk/memory/AbstractMemory.h
+        utwalk/memory/BodyModelBlock.h
+        utwalk/memory/FrameInfoBlock.h
+        utwalk/memory/GraphableBlock.h
+        utwalk/memory/JointBlock.h
+        utwalk/memory/JointCommandBlock.h
+        utwalk/memory/Lock.cpp
+        utwalk/memory/Lock.h
+        utwalk/memory/Logger.cpp
+        utwalk/memory/Logger.h
+        utwalk/memory/Memory.cpp
+        utwalk/memory/Memory.h
+        utwalk/memory/MemoryBlock.cpp
+        utwalk/memory/MemoryBlock.h
+        utwalk/memory/OdometryBlock.h
+        utwalk/memory/PrivateMemory.cpp
+        utwalk/memory/PrivateMemory.h
+        utwalk/memory/SensorBlock.h
+        utwalk/memory/SharedMemory.cpp
+        utwalk/memory/SharedMemory.h
+        utwalk/memory/SimEffectorBlock.h
+        utwalk/memory/WalkEngineBlock.h
+        utwalk/memory/WalkRequestBlock.h
+        utwalk/motion/MotionModule.cpp
+        utwalk/motion/MotionModule.h
+        utwalk/motion/UTWalkEngine.cpp
+        utwalk/motion/UTWalkEngine.h
+        utwalk/motion/WalkEngineParameters.cpp
+        utwalk/motion/WalkEngineParameters.h
+        utwalk/sensor/InertialFilter.cpp
+        utwalk/sensor/InertialFilter.h
+        utwalk/sensor/SensorModule.cpp
+        utwalk/sensor/SensorModule.h
+        utwalk/Module.cpp
+        utwalk/Module.h
+        utwalk/MotionCore.cpp
+        utwalk/MotionCore.h
+        worldmodel/worldmodel.cc
+        worldmodel/worldmodel.h
+        worldmodel/WorldObject.h
+        main.cc)
